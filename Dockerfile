@@ -15,4 +15,5 @@ COPY . .
 
 RUN uv pip install -e . --system
 
-CMD ["start"]
+# ဒါကိုပြင်ရမယ် - start အစား python module ကိုခေါ်မယ်
+CMD ["python", "-m", "src"]
