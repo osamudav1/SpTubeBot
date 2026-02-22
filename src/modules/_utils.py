@@ -30,11 +30,12 @@ async def has_audio_stream(url: str) -> bool:
 
 
 StartMessage = (
-        "<b>🎧 Welcome to {bot_name}!</b>\n"
-        "Your quick and easy tool to download music & media from top platforms.\n\n"
-        "📩 Just send a song name, link, or media URL.\n"
-        "🔎 Search inline: <code>@{bot_username} your search</code>\n\n"
-        "🔐 Privacy policy: /privacy\n"
+        "<b>✨ {bot_name} မှ နွေးထွေးစွာ ကြိုဆိုပါတယ်ခင်ဗျာ!</b>\n"
+        "သီချင်းတွေနဲ့ မီဒီယာတွေကို အမြန်ဆုံးနဲ့ အလွယ်ဆုံး Download ဆွဲဖို့ ကျွန်တော့်ကို အသုံးပြုနိုင်ပါတယ်။\n\n"
+        "📩 သီချင်းနာမည် (သို့) Link တစ်ခုခု ပို့ပေးရုံပါပဲ။\n"
+        "🔎 Inline သုံးပြီး ရှာဖွေရန်: <code>@{bot_username} သီချင်းအမည်</code>\n\n"
+        "🛡️ ကိုယ်ရေးအချက်အလက် လုံခြုံမှုအတွက်: /privacy\n"
+)
     )
 
 async def handle_help_callback(_: Client, message: types.UpdateNewCallbackQuery):
