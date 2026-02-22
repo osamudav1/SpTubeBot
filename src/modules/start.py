@@ -108,15 +108,29 @@ async def welcome(c: Client, message: types.Message):
 
 
 
-@Client.on_message(filters=Filter.command("privacy"))
+from pyrogram import Client, filters, types
+
+@Client.on_message(filters.command("privacy"))
 async def privacy_handler(_: Client, message: types.Message):
+    # Inline Button ဖန်တီးခြင်း
+    keyboard = types.InlineKeyboardMarkup(
+        [
+            [
+                types.InlineKeyboardButton(
+                    text="🛠️ View Source Code", 
+                    url="https://t.me/osamu1123"
+                )
+            ]
+        ]
+    )
+    
     await message.reply_text(
         "🔒 <b>Privacy Policy</b>\n\n"
-        "This bot does <b>not store</b> any personal data or chat history.\n"
-        "All queries are processed in real time and nothing is logged.\n\n"
-        "🛠️ <b>Open Source</b> — You can inspect and contribute:\n"
-        "https://t.me/osamu1123",
-        parse_mode="html",
+        "ဒီ Bot ဟာ အသုံးပြုသူရဲ့ ကိုယ်ရေးအချက်အလက်နဲ့ Chat History တွေကို <b>သိမ်းဆည်းထားခြင်း မရှိပါဘူး</b>။\n"
+        "အချက်အလက်အားလုံးကို Real-time လုပ်ဆောင်တာဖြစ်ပြီး ဘာမှတ်တမ်းမှ သိမ်းမထားပါဘူး။\n\n"
+        "🛠️ <b>Open Source</b> — အောက်က Button ကိုနှိပ်ပြီး Code တွေကို စစ်ဆေးနိုင်ပါတယ် -",
+        parse_mode=enums.ParseMode.HTML, # သို့မဟုတ် "html"
+        reply_markup=keyboard,
         disable_web_page_preview=True
     )
 
