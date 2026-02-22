@@ -36,7 +36,6 @@ StartMessage = (
         "🔎 Inline သုံးပြီး ရှာဖွေရန်: <code>@{bot_username} သီချင်းအမည်</code>\n\n"
         "🛡️ ကိုယ်ရေးအချက်အလက် လုံခြုံမှုအတွက်: /privacy\n"
 )
-    )
 
 async def handle_help_callback(_: Client, message: types.UpdateNewCallbackQuery):
     data = message.payload.data.decode()
