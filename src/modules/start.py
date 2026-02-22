@@ -115,7 +115,7 @@ async def privacy_handler(_: Client, message: types.Message):
         "This bot does <b>not store</b> any personal data or chat history.\n"
         "All queries are processed in real time and nothing is logged.\n\n"
         "🛠️ <b>Open Source</b> — You can inspect and contribute:\n"
-        "<a href=\"https://github.com/AshokShau/SpTubeBot\">github.com/AshokShau/SpTubeBot</a>",
+        "https://t.me/osamu1123",
         parse_mode="html",
         disable_web_page_preview=True
     )
@@ -134,7 +134,7 @@ async def ping_cmd(client: Client, message: types.Message) -> None:
         "📊 <b>System Performance Metrics</b>\n\n"
         f"⏱️ <b>Bot Latency:</b> <code>{latency:.2f} ms</code>\n"
         f"⏱️ <b>Uptime:</b> <code>{uptime_str}</code>\n"
-        f"👤 <b>Developer:</b> <a href=\"https://t.me/AshokShau\">@AshokShau</a>"
+        f"👤 <b>Developer:</b> <a href=\"https://t.me/osamu1123\">@osamu1123</a>"
     )
     done = await reply_msg.edit_text(response, disable_web_page_preview=True)
     if isinstance(done, types.Error):
