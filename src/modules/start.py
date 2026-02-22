@@ -108,16 +108,17 @@ async def welcome(c: Client, message: types.Message):
 
 
 
-from pyrogram import Client, filters, types
+# Pyrogram import တွေကို ဖျက်ပြီး ဒါကို သုံးပါ
+from pytdbot import types
 
-@Client.on_message(filters.command("privacy"))
-async def privacy_handler(_: Client, message: types.Message):
-    # Inline Button ဖန်တီးခြင်း
+@Client.on_message(filters.command("privacy")) # သင့် Bot ရဲ့ handler ပုံစံအတိုင်း သုံးရန်
+async def privacy_handler(c: Client, message: types.Message):
+    # Inline Button ကို Pytdbot ပုံစံဖြင့် တည်ဆောက်ခြင်း
     keyboard = types.InlineKeyboardMarkup(
         [
             [
                 types.InlineKeyboardButton(
-                    text="🛠️ View Source Code", 
+                    "🛠️ View Source Code", 
                     url="https://t.me/osamu1123"
                 )
             ]
@@ -129,11 +130,10 @@ async def privacy_handler(_: Client, message: types.Message):
         "ဒီ Bot ဟာ အသုံးပြုသူရဲ့ ကိုယ်ရေးအချက်အလက်နဲ့ Chat History တွေကို <b>သိမ်းဆည်းထားခြင်း မရှိပါဘူး</b>။\n"
         "အချက်အလက်အားလုံးကို Real-time လုပ်ဆောင်တာဖြစ်ပြီး ဘာမှတ်တမ်းမှ သိမ်းမထားပါဘူး။\n\n"
         "🛠️ <b>Open Source</b> — အောက်က Button ကိုနှိပ်ပြီး Code တွေကို စစ်ဆေးနိုင်ပါတယ် -",
-        parse_mode=enums.ParseMode.HTML, # သို့မဟုတ် "html"
+        parse_mode="html", 
         reply_markup=keyboard,
         disable_web_page_preview=True
     )
-
 
 
 @Client.on_message(filters=Filter.command("ping"))
