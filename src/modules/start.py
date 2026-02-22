@@ -20,9 +20,9 @@ def get_main_menu_keyboard(bot_username: str) -> types.ReplyMarkupInlineKeyboard
                 )
             ),
             types.InlineKeyboardButton(
-                text="📂 GitHub",
+                text="⚜️𝒪𝓌𝓃𝑒𝓇⚜️",
                 type=types.InlineKeyboardButtonTypeUrl(
-                    url="https://github.com/AshokShau/SpTubeBot"
+                    url="https://t.me/osamu1123"
                 )
             )
         ],
